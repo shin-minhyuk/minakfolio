@@ -1,3 +1,128 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Pretendard Variable";
+  src: url("/src/app/fonts/PretendardVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+body {
+  font-family: "Pretendard Variable", sans-serif;
+}
+
+/* 눈 키프레임 */
+@keyframes snow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(900px);
+  }
+}
+
+/* 눈 스타일 */
+.custom-snow {
+  background-size: 900px 900px;
+  animation: snow 8s linear infinite;
+  background-image: radial-gradient(
+      3px 3px at 624px 577px,
+      hsla(0, 100%, 99%, 0.7) 50%,
+      rgba(55, 55, 55, 0)
+    ),
+    radial-gradient(
+      4px 4px at 528px 874px,
+      hsla(0, 100%, 99%, 0.5) 50%,
+      rgba(55, 55, 55, 0)
+    ),
+    radial-gradient(
+      6px 6px at 794px 485px,
+      hsla(0, 100%, 99%, 0.6) 50%,
+      rgba(55, 55, 55, 0)
+    ),
+    radial-gradient(
+      5px 5px at 815px 183px,
+      hsla(0, 100%, 99%, 0.4) 50%,
+      rgba(55, 55, 55, 0)
+    ),
+    radial-gradient(
+      6px 6px at 115px 286px,
+      hsla(0, 100%, 99%, 0.7) 50%,
+      rgba(55, 55, 55, 0)
+    ),
+    radial-gradient(
+      3px 3px at 811px 760px,
+      hsla(0, 100%, 99%, 0.7) 50%,
+      rgba(55, 55, 55, 0)
+    ),
+    radial-gradient(
+      6px 6px at 762px 618px,
+      hsla(0, 100%, 99%, 0.5) 50%,
+      rgba(55, 55, 55, 0)
+    ),
+    radial-gradient(
+      5px 5px at 277px 128px,
+      hsla(0, 100%, 99%, 0.7) 50%,
+      rgba(55, 55, 55, 0)
+    ),
+    radial-gradient(
+      3px 3px at 679px 811px,
+      hsla(0, 100%, 99%, 0.3) 50%,
+      rgba(55, 55, 55, 0)
+    ),
+    radial-gradient(
+      4px 4px at 45px 765px,
+      hsla(0, 100%, 99%, 0.7) 50%,
+      rgba(55, 55, 55, 0)
+    );
+}
+
+/* 중앙에서 양쪽으로 퍼지는 키프레임 */
+@keyframes stretchFromCenter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70dvw;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 중앙에서 양쪽으로 퍼지는 스타일 */
+@layer components {
+  .custom-bar {
+    @apply flex-shrink-0 relative h-2 bg-white;
+    width: 0;
+    max-width: var(--size-default); /* 커스텀 프로퍼티로 정의 필요 */
+    animation: stretchFromCenter 2s 1s forwards;
+
+    &::before,
+    &::after {
+      @apply absolute block w-[70px] h-[64px] opacity-0 bottom-2;
+      animation: fadeIn 0.5s 3s forwards;
+      content: "";
+    }
+
+    &::before {
+      left: 4px;
+      background: url("/img/tree_left.svg") center bottom no-repeat;
+      background-size: contain;
+    }
+
+    &::after {
+      right: 4px;
+      background: url("/img/tree_right.svg") center bottom no-repeat;
+      background-size: contain;
+    }
+  }
+}
