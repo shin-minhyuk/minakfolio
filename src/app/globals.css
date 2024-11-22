@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Pretendard-Regular';
-  font-weight: 400;
+  font-family: 'Pretendard';
   font-display: swap;
-  src:
-    local('Pretendard Regular'),
-    url('/fonts/Pretendard-Regular.woff2') format('woff2');
+  src: url('/fonts/Pretendard-Variable.woff2') format('woff2-variations');
+  font-weight: 100 900; /* 가변 폰트의 지원 weight 범위 */
+  font-style: normal;
 }
 
 @font-face {

@@ -1,10 +1,10 @@
-import About from './components/About';
-import Contact from './components/Contact';
-import Education from './components/Education';
-import Header from './components/Header';
-import Intro from './components/Intro';
-import IntroAnimation from './components/IntroAnimation';
-import Projects from './components/Projects';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import Education from './components/Education/Education';
+import Header from './components/Common/Header';
+import Intro from './components/Intro/Intro';
+import IntroAnimation from './components/Intro/IntroAnimation';
+import Projects from './components/Projects/Projects';
 
 export default function Home() {
   return (

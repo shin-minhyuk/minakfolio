@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        pretendard: ['Pretendard-Regular', 'sans-serif'],
+        pretendard: ['Pretendard', 'sans-serif'],
         aggro: ['SB Aggro', 'sans-serif'],
         ghanachocolate: ['Ghanachocolate', 'sans-serif'],
       },

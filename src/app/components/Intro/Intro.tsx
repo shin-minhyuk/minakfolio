@@ -8,9 +8,9 @@ export default function Intro() {
   const [startTyping, setStartTyping] = useState(false); // 타이핑 시작 여부
   const lines = [
     { text: '안녕하세요', color: '#fff9f9' },
-    { text: '새로운 도전에 성장하는', color: '#FF6347' }, // 새로운 도전에 색상 추가
-    { text: '프론트엔드 개발자', color: '#1E90FF' }, // 프론트엔드에 색상 추가
-    { text: '신민혁 입니다', color: '#32CD32' }, // 신민혁에 색상 추가
+    { text: '새로운 도전에 성장하는', color: '#FF6347' },
+    { text: '프론트엔드 개발자', color: '#1E90FF' },
+    { text: '신민혁 입니다', color: '#32CD32' },
   ]; // 전체 문구 배열
   const typingSpeed = 100; // 타이핑 속도 (ms)
   const lineDelay = 100; // 한 줄 타이핑 완료 후 대기 시간 (ms)
