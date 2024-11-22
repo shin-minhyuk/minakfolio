@@ -27,56 +27,16 @@ body {
 .custom-snow {
   background-size: 900px 900px;
   animation: snow 8s linear infinite;
-  background-image: radial-gradient(
-      3px 3px at 624px 577px,
-      hsla(0, 100%, 99%, 0.7) 50%,
-      rgba(55, 55, 55, 0)
-    ),
-    radial-gradient(
-      4px 4px at 528px 874px,
-      hsla(0, 100%, 99%, 0.5) 50%,
-      rgba(55, 55, 55, 0)
-    ),
-    radial-gradient(
-      6px 6px at 794px 485px,
-      hsla(0, 100%, 99%, 0.6) 50%,
-      rgba(55, 55, 55, 0)
-    ),
-    radial-gradient(
-      5px 5px at 815px 183px,
-      hsla(0, 100%, 99%, 0.4) 50%,
-      rgba(55, 55, 55, 0)
-    ),
-    radial-gradient(
-      6px 6px at 115px 286px,
-      hsla(0, 100%, 99%, 0.7) 50%,
-      rgba(55, 55, 55, 0)
-    ),
-    radial-gradient(
-      3px 3px at 811px 760px,
-      hsla(0, 100%, 99%, 0.7) 50%,
-      rgba(55, 55, 55, 0)
-    ),
-    radial-gradient(
-      6px 6px at 762px 618px,
-      hsla(0, 100%, 99%, 0.5) 50%,
-      rgba(55, 55, 55, 0)
-    ),
-    radial-gradient(
-      5px 5px at 277px 128px,
-      hsla(0, 100%, 99%, 0.7) 50%,
-      rgba(55, 55, 55, 0)
-    ),
-    radial-gradient(
-      3px 3px at 679px 811px,
-      hsla(0, 100%, 99%, 0.3) 50%,
-      rgba(55, 55, 55, 0)
-    ),
-    radial-gradient(
-      4px 4px at 45px 765px,
-      hsla(0, 100%, 99%, 0.7) 50%,
-      rgba(55, 55, 55, 0)
-    );
+  background-image: radial-gradient(3px 3px at 624px 577px, hsla(0, 100%, 99%, 0.7) 50%, rgba(55, 55, 55, 0)),
+    radial-gradient(4px 4px at 528px 874px, hsla(0, 100%, 99%, 0.5) 50%, rgba(55, 55, 55, 0)),
+    radial-gradient(6px 6px at 794px 485px, hsla(0, 100%, 99%, 0.6) 50%, rgba(55, 55, 55, 0)),
+    radial-gradient(5px 5px at 815px 183px, hsla(0, 100%, 99%, 0.4) 50%, rgba(55, 55, 55, 0)),
+    radial-gradient(6px 6px at 115px 286px, hsla(0, 100%, 99%, 0.7) 50%, rgba(55, 55, 55, 0)),
+    radial-gradient(3px 3px at 811px 760px, hsla(0, 100%, 99%, 0.7) 50%, rgba(55, 55, 55, 0)),
+    radial-gradient(6px 6px at 762px 618px, hsla(0, 100%, 99%, 0.5) 50%, rgba(55, 55, 55, 0)),
+    radial-gradient(5px 5px at 277px 128px, hsla(0, 100%, 99%, 0.7) 50%, rgba(55, 55, 55, 0)),
+    radial-gradient(3px 3px at 679px 811px, hsla(0, 100%, 99%, 0.3) 50%, rgba(55, 55, 55, 0)),
+    radial-gradient(4px 4px at 45px 765px, hsla(0, 100%, 99%, 0.7) 50%, rgba(55, 55, 55, 0));
 }
 
 /* 중앙에서 양쪽으로 퍼지는 키프레임 */
@@ -104,12 +64,12 @@ body {
     @apply flex-shrink-0 relative h-2 bg-white;
     width: 0;
     max-width: var(--size-default); /* 커스텀 프로퍼티로 정의 필요 */
-    animation: stretchFromCenter 2s 1s forwards;
+    animation: stretchFromCenter 2s 5s forwards;
 
     &::before,
     &::after {
       @apply absolute block w-[70px] h-[64px] opacity-0 bottom-2;
-      animation: fadeIn 0.5s 3s forwards;
+      animation: fadeIn 0.5s 6s forwards;
       content: "";
     }
 
@@ -124,5 +84,28 @@ body {
       background: url("/img/tree_right.svg") center bottom no-repeat;
       background-size: contain;
     }
+  }
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background-color: #fff;
+  animation: blink 0.7s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes IntroWave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
