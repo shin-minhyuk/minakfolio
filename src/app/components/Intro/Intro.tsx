@@ -8,9 +8,9 @@ export default function Intro() {
   const [startTyping, setStartTyping] = useState(false); // 타이핑 시작 여부
   const lines = [
     { text: '안녕하세요', color: '#fff9f9' },
-    { text: '새로운 도전에 성장하는', color: '#FF6347' },
-    { text: '프론트엔드 개발자', color: '#1E90FF' },
-    { text: '신민혁 입니다', color: '#32CD32' },
+    { text: '새로운 도전에 성장하는', color: '#ecb921' },
+    { text: '프론트엔드 개발자', color: '#c5554d' },
+    { text: '신민혁 입니다', color: '#14a211' },
   ]; // 전체 문구 배열
   const typingSpeed = 100; // 타이핑 속도 (ms)
   const lineDelay = 100; // 한 줄 타이핑 완료 후 대기 시간 (ms)
@@ -50,11 +50,14 @@ export default function Intro() {
     <section className='relative w-auto overflow-hidden' style={{ height: 'calc(100dvh + 173px)' }}>
       {/* snow */}
       <div
-        className='custom-snow absolute -top-[900px] left-0 right-0 block w-full bg-[#373737]'
+        className='custom-snow absolute -top-[900px] left-0 right-0 z-20 block w-full'
         style={{ height: 'calc((100dvh + 173px)*2)' }}
       />
       {/* title */}
-      <div className='flex flex-col items-center justify-center py-[72px]' style={{ height: 'calc(100dvh)' }}>
+      <div
+        className='flex flex-col items-center justify-center bg-[#373737] py-[72px]'
+        style={{ height: 'calc(100dvh)' }}
+      >
         <h2 className='z-20 mx-auto mb-[36px] flex flex-col gap-2 text-center font-aggro text-5xl font-bold text-[#fff9f9]'>
           {lines.slice(0, lineIndex).map((line, idx) => (
             <p key={idx} style={{ color: line.color }}>
@@ -67,7 +70,8 @@ export default function Intro() {
             ))}
           </p>
         </h2>
-        <div className='custom-bar relative h-2 w-0 max-w-[1200px] bg-[#fff9f9]'></div>
+        <div className='custom-bar relative h-2 w-0 max-w-[1200px] bg-[#fff9f9]' />
+        <div className='before:animate-scroll-indicator relative mt-[100px] h-[54px] w-[34px] rounded-[20px] border-2 border-[#fff9f9] before:absolute before:left-[13px] before:top-[10px] before:h-3 before:w-1 before:rounded-full before:bg-[#fff9f9] before:content-[""]' />
       </div>
       {/* slide */}
       <div className='relative h-[173px] w-full overflow-x-hidden bg-white'>
