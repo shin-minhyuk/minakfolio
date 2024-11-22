@@ -1,16 +1,15 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import wave from "@/app/assets/imgs/wave.svg";
+import React, { useState, useEffect } from 'react';
 
 export default function Intro() {
   const [currentText, setCurrentText] = useState<string[]>([]); // 현재 타이핑된 글자 배열
   const [lineIndex, setLineIndex] = useState(0); // 현재 타이핑 중인 줄
   const lines = [
-    { text: "안녕하세요", color: "#fff9f9" },
-    { text: "새로운 도전에 성장하는", color: "#FF6347" }, // 새로운 도전에 색상 추가
-    { text: "프론트엔드 개발자", color: "#1E90FF" }, // 프론트엔드에 색상 추가
-    { text: "신민혁 입니다", color: "#32CD32" }, // 신민혁에 색상 추가
+    { text: '안녕하세요', color: '#fff9f9' },
+    { text: '새로운 도전에 성장하는', color: '#FF6347' }, // 새로운 도전에 색상 추가
+    { text: '프론트엔드 개발자', color: '#1E90FF' }, // 프론트엔드에 색상 추가
+    { text: '신민혁 입니다', color: '#32CD32' }, // 신민혁에 색상 추가
   ]; // 전체 문구 배열
   const typingSpeed = 100; // 타이핑 속도 (ms)
   const lineDelay = 100; // 한 줄 타이핑 완료 후 대기 시간 (ms)
@@ -39,15 +38,15 @@ export default function Intro() {
   }, [lineIndex]); // 줄 변경 시 재실행
 
   return (
-    <section className='relative w-auto overflow-hidden' style={{ height: "calc(100dvh + 173px)" }}>
+    <section className='relative w-auto overflow-hidden' style={{ height: 'calc(100dvh + 173px)' }}>
       {/* snow */}
       <div
-        className='absolute -top-[900px] right-0 left-0 block w-full custom-snow bg-[#373737]'
-        style={{ height: "calc((100dvh + 173px)*2)" }}
+        className='custom-snow absolute -top-[900px] left-0 right-0 block w-full bg-[#373737]'
+        style={{ height: 'calc((100dvh + 173px)*2)' }}
       />
       {/* title */}
-      <div className='flex justify-center items-center flex-col py-[72px]' style={{ height: "calc(100dvh)" }}>
-        <h2 className='text-[#fff9f9] text-5xl font-aggro font-bold flex flex-col gap-2 text-center z-20 mx-auto mt-[130px] mb-[36px]'>
+      <div className='flex flex-col items-center justify-center py-[72px]' style={{ height: 'calc(100dvh)' }}>
+        <h2 className='z-20 mx-auto mb-[36px] mt-[130px] flex flex-col gap-2 text-center font-aggro text-5xl font-bold text-[#fff9f9]'>
           {lines.slice(0, lineIndex).map((line, idx) => (
             <p key={idx} style={{ color: line.color }}>
               {line.text}
@@ -59,21 +58,21 @@ export default function Intro() {
             ))}
           </p>
         </h2>
-        <div className='relative max-w-[1200px] w-0 h-2 bg-[#fff9f9] custom-bar'></div>
+        <div className='custom-bar relative h-2 w-0 max-w-[1200px] bg-[#fff9f9]'></div>
       </div>
       {/* slide */}
-      <div className='relative w-full h-[173px] overflow-x-hidden bg-white'>
+      <div className='relative h-[173px] w-full overflow-x-hidden bg-white'>
         {[
-          { top: "-20px", left: "0", opacity: 1 }, // 첫 번째 웨이브
-          { top: "-10px", left: "-100px", opacity: 0.5 }, // 두 번째 웨이브
-          { top: "0", left: "-160px", opacity: 0.2 }, // 세 번째 웨이브
+          { top: '-20px', left: '0', opacity: 1 }, // 첫 번째 웨이브
+          { top: '-10px', left: '-100px', opacity: 0.5 }, // 두 번째 웨이브
+          { top: '0', left: '-160px', opacity: 0.2 }, // 세 번째 웨이브
         ].map((style, i) => (
           <div
             key={i}
-            className='absolute bg-white w-[6400px] h-[173px] IntroWave'
+            className='IntroWave absolute h-[173px] w-[6400px] bg-white'
             style={{
-              backgroundImage: `url(${wave.src})`,
-              backgroundRepeat: "repeat-x",
+              backgroundImage: `url(/imgs/wave.svg)`,
+              backgroundRepeat: 'repeat-x',
               animation: `IntroWave 20s linear infinite`,
               top: style.top, // 각각의 top 설정
               left: style.left, // 각각의 left 설정

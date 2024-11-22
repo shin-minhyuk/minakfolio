@@ -3,14 +3,51 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Pretendard Variable";
-  src: url("/src/app/fonts/PretendardVariable.woff2") format("woff2");
-  font-weight: 100 900;
+  font-family: 'Pretendard-Regular';
+  font-weight: 400;
   font-display: swap;
+  src:
+    local('Pretendard Regular'),
+    url('/fonts/Pretendard-Regular.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Ghanachocolate';
+  font-display: swap;
+  src:
+    local('Ghanachocolate'),
+    url('/fonts/Ghanachocolate.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SB Aggro';
+  font-display: swap;
+  src: url('/fonts/SB-Aggro-B.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SB Aggro';
+  font-display: swap;
+  src: url('/fonts/SB-Aggro-L.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SB Aggro';
+  font-display: swap;
+  src: url('/fonts/SB-Aggro-M.ttf') format('truetype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
 body {
-  font-family: "Pretendard Variable", sans-serif;
+  font-family: 'Pretendard Variable', sans-serif;
+  color: #373737;
+  font-weight: 400;
 }
 
 /* 눈 키프레임 */
@@ -61,27 +98,27 @@ body {
 /* 중앙에서 양쪽으로 퍼지는 스타일 */
 @layer components {
   .custom-bar {
-    @apply flex-shrink-0 relative h-2 bg-white;
+    @apply relative h-2 flex-shrink-0 bg-white;
     width: 0;
     max-width: var(--size-default); /* 커스텀 프로퍼티로 정의 필요 */
     animation: stretchFromCenter 2s 5s forwards;
 
     &::before,
     &::after {
-      @apply absolute block w-[70px] h-[64px] opacity-0 bottom-2;
+      @apply absolute bottom-2 block h-[64px] w-[70px] opacity-0;
       animation: fadeIn 0.5s 6s forwards;
-      content: "";
+      content: '';
     }
 
     &::before {
       left: 4px;
-      background: url("/img/tree_left.svg") center bottom no-repeat;
+      background: url('/imgs/tree_left.svg') center bottom no-repeat;
       background-size: contain;
     }
 
     &::after {
       right: 4px;
-      background: url("/img/tree_right.svg") center bottom no-repeat;
+      background: url('/imgs/tree_right.svg') center bottom no-repeat;
       background-size: contain;
     }
   }
