@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 export default function Intro() {
   const [currentText, setCurrentText] = useState<string[]>([]); // 현재 타이핑된 글자 배열
   const [lineIndex, setLineIndex] = useState(0); // 현재 타이핑 중인 줄
+  const [startTyping, setStartTyping] = useState(false); // 타이핑 시작 여부
   const lines = [
     { text: '안녕하세요', color: '#fff9f9' },
     { text: '새로운 도전에 성장하는', color: '#FF6347' }, // 새로운 도전에 색상 추가
@@ -15,7 +16,15 @@ export default function Intro() {
   const lineDelay = 100; // 한 줄 타이핑 완료 후 대기 시간 (ms)
 
   useEffect(() => {
-    if (lineIndex >= lines.length) return; // 모든 줄 타이핑 완료 시 종료
+    const timer = setTimeout(() => {
+      setStartTyping(true);
+    }, 4000);
+
+    return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 정리
+  }, []);
+
+  useEffect(() => {
+    if (!startTyping || lineIndex >= lines.length) return; // 모든 줄 타이핑 완료 시 종료
 
     let currentIndex = 0;
 
@@ -35,7 +44,7 @@ export default function Intro() {
     }, typingSpeed);
 
     return () => clearInterval(typingEffect); // 컴포넌트 언마운트 시 타이머 정리
-  }, [lineIndex]); // 줄 변경 시 재실행
+  }, [lineIndex, startTyping]); // 줄 변경 시 재실행
 
   return (
     <section className='relative w-auto overflow-hidden' style={{ height: 'calc(100dvh + 173px)' }}>
@@ -46,7 +55,7 @@ export default function Intro() {
       />
       {/* title */}
       <div className='flex flex-col items-center justify-center py-[72px]' style={{ height: 'calc(100dvh)' }}>
-        <h2 className='z-20 mx-auto mb-[36px] mt-[130px] flex flex-col gap-2 text-center font-aggro text-5xl font-bold text-[#fff9f9]'>
+        <h2 className='z-20 mx-auto mb-[36px] flex flex-col gap-2 text-center font-aggro text-5xl font-bold text-[#fff9f9]'>
           {lines.slice(0, lineIndex).map((line, idx) => (
             <p key={idx} style={{ color: line.color }}>
               {line.text}
