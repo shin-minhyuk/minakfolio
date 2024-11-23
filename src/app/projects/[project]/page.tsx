@@ -188,8 +188,8 @@ export default function ProjectsIdPage({ params }: { params: { project: string }
           <dt className='font-aggro font-[100]'>사용 기술</dt>
           <dd className=''>
             <ul className='flex flex-wrap gap-3'>
-              {projectData.techStack.map((stack) => (
-                <li className='flex items-center gap-1 rounded-[6px] border border-neutral-300 pr-1'>
+              {projectData.techStack.map((stack, i) => (
+                <li key={i} className='flex items-center gap-1 rounded-[6px] border border-neutral-300 pr-1'>
                   <Icon type={stack}>{stack}</Icon>
                   <span className='leading-[16px]'>{stack}</span>
                 </li>
