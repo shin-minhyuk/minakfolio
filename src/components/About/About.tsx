@@ -5,6 +5,9 @@ import TitleBadge from '../Common/TitleBadge';
 import Link from 'next/link';
 
 export default function About() {
+  const underLineHoverEffect =
+    'relative after:absolute after:-bottom-[4px] after:left-0 after:-z-[1] after:h-[10px] after:w-0 after:bg-[#fcdedc] after:transition-all after:duration-300 hover:after:w-full';
+
   return (
     <Section>
       <TitleBadge href='#'># ABOUT</TitleBadge>
@@ -35,13 +38,15 @@ export default function About() {
             <dl className='pl-14px grid grid-cols-[80px_1fr] items-baseline pl-[14px] leading-[2rem]'>
               <dt>전화번호</dt>
               <dd className='font-pretendard'>
-                <Link href='tel:010-5544-4221' className='after: after:content-[""]'>
-                  010. 5544. 4221
+                <Link href='tel:010-5544-4221' className={underLineHoverEffect}>
+                  010 - 5544 - 4221
                 </Link>
               </dd>
               <dt>이메일</dt>
               <dd className='font-pretendard'>
-                <Link href='mailto:afs_style@naver.com'>afs_style@naver.com</Link>
+                <Link href='mailto:afs_style@naver.com' className={underLineHoverEffect}>
+                  afs_style@naver.com
+                </Link>
               </dd>
             </dl>
           </li>
@@ -52,11 +57,15 @@ export default function About() {
             <dl className='pl-14px grid grid-cols-[80px_1fr] items-baseline pl-[14px] leading-[2rem]'>
               <dt>깃허브</dt>
               <dd className='font-pretendard'>
-                <Link href='https://github.com/shin-minhyuk/'>github/shin-minhyuk</Link>
+                <Link href='https://github.com/shin-minhyuk/' className={underLineHoverEffect}>
+                  github/shin-minhyuk
+                </Link>
               </dd>
               <dt>블로그</dt>
               <dd className='font-pretendard'>
-                <Link href='https://blog.naver.com/afs_style'>blog.naver.com/afs_style</Link>
+                <Link href='https://blog.naver.com/afs_style' className={underLineHoverEffect}>
+                  blog.naver.com/afs_style
+                </Link>
               </dd>
             </dl>
           </li>
