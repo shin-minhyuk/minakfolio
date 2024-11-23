@@ -20,7 +20,7 @@ export default function About() {
       <div className='flex justify-center gap-10 font-aggro'>
         <div className='text-center'>
           <Image
-            src='/imgs/profile.jpg'
+            src='/imgs/profile.JPG'
             width={300}
             height={300}
             alt='이미지'
