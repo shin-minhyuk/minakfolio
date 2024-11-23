@@ -1,5 +1,3 @@
-'use client';
-
 import Section from '../Common/Section';
 import SectionHeadLine from '../Common/SectionHeadLine';
 import TitleBadge from '../Common/TitleBadge';
@@ -56,8 +54,8 @@ export default function Education() {
               AWS & 오즈코딩스쿨 해커톤 참여 및 <span className='font-semibold'>1위</span>
             </p>
             <p className='pl-4 indent-[-9px] before:mr-1 before:content-["·"]'>
-              "게임메이트 매칭 서비스 - <span className='font-semibold'>비타</span>, 기업 협업 자사몰 서비스 -{' '}
-              <span className='font-semibold'>믹골프</span>" <br />
+              &quot;게임메이트 매칭 서비스 - <span className='font-semibold'>비타</span>, 기업 협업 자사몰 서비스 -
+              <span className='font-semibold'> 믹골프</span>&quot; <br />
               개발 리더, 프론트엔드 리더로 참여
             </p>
           </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Intro() {
   const [currentText, setCurrentText] = useState<string[]>([]); // 현재 타이핑된 글자 배열
