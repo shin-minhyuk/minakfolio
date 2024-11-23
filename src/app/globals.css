@@ -75,16 +75,6 @@ body {
     radial-gradient(4px 4px at 45px 765px, hsla(0, 100%, 99%, 0.7) 50%, rgba(55, 55, 55, 0));
 }
 
-/* 중앙에서 양쪽으로 퍼지는 키프레임 */
-@keyframes stretchFromCenter {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 70dvw;
-  }
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -94,32 +84,12 @@ body {
   }
 }
 
-/* 중앙에서 양쪽으로 퍼지는 스타일 */
-@layer components {
-  .custom-bar {
-    @apply relative h-2 flex-shrink-0 bg-white;
+@keyframes stretchFromCenter {
+  0% {
     width: 0;
-    max-width: var(--size-default); /* 커스텀 프로퍼티로 정의 필요 */
-    animation: stretchFromCenter 2s 9s forwards;
-
-    &::before,
-    &::after {
-      @apply absolute bottom-2 block h-[64px] w-[70px] opacity-0;
-      animation: fadeIn 0.5s 10s forwards;
-      content: '';
-    }
-
-    &::before {
-      left: 4px;
-      background: url('/imgs/tree_left.svg') center bottom no-repeat;
-      background-size: contain;
-    }
-
-    &::after {
-      right: 4px;
-      background: url('/imgs/tree_right.svg') center bottom no-repeat;
-      background-size: contain;
-    }
+  }
+  100% {
+    width: 70dvw;
   }
 }
 

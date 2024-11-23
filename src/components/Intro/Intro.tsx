@@ -7,6 +7,7 @@ export default function Intro() {
   const [lineIndex, setLineIndex] = useState(0); // 현재 타이핑 중인 줄
   const [startTyping, setStartTyping] = useState(false); // 타이핑 시작 여부
   const [showMouseComponent, setShowMouseComponent] = useState(false); // 마우스 컴포넌트 표시 여부
+  const [showCustomBar, setShowCustomBar] = useState(false);
 
   const lines = [
     { text: '안녕하세요', color: '#fff9f9' },
@@ -18,17 +19,28 @@ export default function Intro() {
   const lineDelay = 100; // 한 줄 타이핑 완료 후 대기 시간 (ms)
 
   useEffect(() => {
+    const hasVisited = sessionStorage.getItem('hasVisited');
+
+    const customBarTime = hasVisited ? 0 : 4000;
+    const startTime = hasVisited ? 0 : 4000;
+    const mouseShowTime = hasVisited ? 6000 : 9500;
+
+    const customBarTimer = setTimeout(() => {
+      setShowCustomBar(true);
+    }, customBarTime);
+
     const startTypingTimer = setTimeout(() => {
       setStartTyping(true);
-    }, 4000);
+    }, startTime);
 
     const mouseShowTimer = setTimeout(() => {
       setShowMouseComponent(true);
-    }, 9500);
+    }, mouseShowTime);
 
     return () => {
       clearTimeout(startTypingTimer);
       clearTimeout(mouseShowTimer);
+      clearTimeout(customBarTimer);
     };
   }, []);
 
@@ -90,7 +102,27 @@ export default function Intro() {
             ))}
           </p>
         </h2>
-        <div className='custom-bar relative h-2 w-0 max-w-[1200px] bg-[#fff9f9]' />
+
+        {showCustomBar && (
+          <div className='relative h-16 w-full'>
+            <div className='animate-stretchFromCenter absolute left-1/2 top-1/2 h-2 w-0 -translate-x-1/2 -translate-y-1/2 transform bg-white'>
+              <div
+                className='animate-fadeIn absolute bottom-2 left-0 h-[64px] w-[70px] bg-contain bg-bottom bg-no-repeat opacity-0'
+                style={{
+                  backgroundImage: `url('/imgs/tree_left.svg')`,
+                }}
+              ></div>
+
+              <div
+                className='animate-fadeIn absolute bottom-2 right-0 h-[64px] w-[70px] bg-contain bg-bottom bg-no-repeat opacity-0'
+                style={{
+                  backgroundImage: `url('/imgs/tree_right.svg')`,
+                }}
+              ></div>
+            </div>
+          </div>
+        )}
+
         <div
           className={`relative mt-[100px] h-[54px] w-[34px] rounded-[20px] border-2 border-[#fff9f9] opacity-0 transition-opacity duration-1000 ease-in-out before:absolute before:left-[13px] before:top-[10px] before:h-3 before:w-1 before:animate-scroll-indicator before:rounded-full before:bg-[#fff9f9] before:content-[""] ${
             showMouseComponent ? 'opacity-100' : 'opacity-0'

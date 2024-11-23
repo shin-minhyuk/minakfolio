@@ -26,10 +26,20 @@ const config: Config = {
           '66%': { transform: 'rotate(-20deg)' },
           '100%': { transform: 'rotate(0deg)' }, // 애니메이션 종료 시 원래 상태로 복귀
         },
+        stretchFromCenter: {
+          '0%': { width: '0' },
+          '100%': { width: '70dvw' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
         'scroll-indicator': 'scroll-indicator 1.5s ease-in-out infinite',
         shake: 'shake 0.5s ease-in-out',
+        stretchFromCenter: 'stretchFromCenter 2s 4s forwards',
+        fadeIn: 'fadeIn 1s 5.5s forwards',
       },
       boxShadow: {
         card: '10px 10px 0 0',

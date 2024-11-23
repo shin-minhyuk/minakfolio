@@ -4,13 +4,22 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
 export default function IntroAnimation() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(false);
   const [currentText, setCurrentText] = useState('');
   const fullText = 'I find joy in what I do.';
   const textRef = useRef('');
   const typingSpeed = 100;
 
   useEffect(() => {
+    const hasVisited = sessionStorage.getItem('hasVisited');
+
+    if (!hasVisited) {
+      setShowIntro(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!showIntro) return;
     let index = 0;
 
     const typingInterval = setInterval(() => {
@@ -24,12 +33,13 @@ export default function IntroAnimation() {
         // 인트로 애니메이션의 지속 시간을 조정합니다.
         setTimeout(() => {
           setShowIntro(false);
+          sessionStorage.setItem('hasVisited', 'true');
         }, 1000);
       }
     }, typingSpeed);
 
     return () => clearInterval(typingInterval);
-  }, []);
+  }, [showIntro]);
 
   return (
     <AnimatePresence>
