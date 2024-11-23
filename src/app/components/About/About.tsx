@@ -37,7 +37,9 @@ export default function About() {
             <dl className='pl-14px grid grid-cols-[80px_1fr] items-baseline pl-[14px] leading-[2rem]'>
               <dt>전화번호</dt>
               <dd className='font-pretendard'>
-                <Link href='tel:010-5544-4221'>010. 5544. 4221</Link>
+                <Link href='tel:010-5544-4221' className='after: after:content-[""]'>
+                  010. 5544. 4221
+                </Link>
               </dd>
               <dt>이메일</dt>
               <dd className='font-pretendard'>
