@@ -38,13 +38,27 @@ export default function Projects() {
               <p className='my-[6px] leading-[16px]'>실시간 소통이 가능한 게임메이트 매칭 서비스</p>
               <p className='my-[6px] text-[14px] leading-[14px]'>2024. 10.10 - 2024. 11. 06</p>
               <ul className='flex gap-2'>
-                <Icon type='Vite' />
-                <Icon type='Typescript' />
-                <Icon type='React' />
-                <Icon type='Tailwind' />
-                <Icon type='Zustand' />
-                <Icon type='Axios' />
-                <Icon type='Tanstack-query' />
+                <li className='rounded-[4px]'>
+                  <Icon type='Vite' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Typescript' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='React' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Tailwind' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Zustand' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Axios' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Tanstack-query' />
+                </li>
               </ul>
             </div>
             <Button>자세히 보기</Button>
@@ -66,13 +80,27 @@ export default function Projects() {
               <p className='my-[6px] leading-[16px]'>파파타랩스 기업협업 자사몰 서비스 유저, 어드민 기획 및 제작</p>
               <p className='my-[6px] text-[14px] leading-[14px]'>2024. 11.07 - 2024. 12. 11</p>
               <ul className='flex gap-2'>
-                <Icon type='Vite' />
-                <Icon type='Typescript' />
-                <Icon type='React' />
-                <Icon type='Tailwind' />
-                <Icon type='Zustand' />
-                <Icon type='Axios' />
-                <Icon type='Tanstack-query' />
+                <li className='rounded-[4px]'>
+                  <Icon type='Vite' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Typescript' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='React' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Tailwind' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Zustand' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Axios' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Tanstack-query' />
+                </li>
               </ul>
             </div>
             <BlackBadge>자세히 보기</BlackBadge>
