@@ -14,7 +14,7 @@ type ProjectData = {
 
 type Projects = Record<ProjectKeys, ProjectData>;
 
-const projectData: Projects = {
+const projectDatas: Projects = {
   vita: {
     title: 'VITA',
     description: '실시간 소통이 가능한 게임메이트 매칭 서비스',
@@ -37,12 +37,16 @@ export default function ProjectsIdPage({ params }: { params: { project: string }
   if (['vita', 'micgolf'].includes(params.project) === false) return <div>404 - error</div>;
 
   // 20241123, FIXME: 추후에 교체 예정, 프로젝트 데이터 저장 및 불러오는 API
-  const projectDetail = projectData[params.project as ProjectKeys];
-  console.log(projectDetail);
+  const projectData = projectDatas[params.project as ProjectKeys];
+  console.log(projectData);
 
   return (
-    <div>
+    <>
       <Header />
-    </div>
+      <section className='mx-auto mt-[72px] px-[40px] py-[72px]' style={{ width: 'calc(100% - 80px)' }}>
+        <h2>{projectData.title}</h2>
+        <p>{projectData.description}</p>
+      </section>
+    </>
   );
 }

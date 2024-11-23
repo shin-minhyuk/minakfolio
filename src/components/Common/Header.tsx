@@ -10,7 +10,11 @@ export default function Header() {
 
   return (
     <header
-      className={`${showGoBackLink && 'border-b border-neutral-400'} t-0 fixed left-0 right-0 z-20 mx-[20px] flex items-center justify-between px-[4px] py-[16px] font-aggro text-white`}
+      className={`${showGoBackLink && 'border-b border-neutral-400'} t-0 fixed left-0 right-0 top-0 z-20 mx-auto flex items-center justify-between px-[4px] py-[16px] font-aggro text-white`}
+      style={{
+        width: 'calc(100% - 40px)',
+        height: '68px',
+      }}
     >
       {showGoBackLink ? (
         <Link
