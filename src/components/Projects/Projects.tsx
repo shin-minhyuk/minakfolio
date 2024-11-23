@@ -23,7 +23,7 @@ export default function Projects() {
       </p>
       <ul className='grid grid-cols-2 gap-[60px]'>
         <li className='transfrom hover:shadow-card group relative w-full overflow-hidden rounded-[20px] border border-neutral-300 transition-all duration-500 hover:-translate-x-3 hover:-translate-y-3'>
-          <Link href='/'>
+          <Link href='/projects/vita'>
             <div className='relative h-[260px]'>
               <Image
                 src={'/imgs/project_vita.jpg'}
@@ -38,19 +38,20 @@ export default function Projects() {
               <p className='my-[6px] leading-[16px]'>실시간 소통이 가능한 게임메이트 매칭 서비스</p>
               <p className='my-[6px] text-[14px] leading-[14px]'>2024. 10.10 - 2024. 11. 06</p>
               <ul className='flex gap-2'>
-                <Icon type='vite' />
-                <Icon type='typescript' />
-                <Icon type='react' />
-                <Icon type='tailwind' />
-                <Icon type='zustand' />
-                <Icon type='axios' />
+                <Icon type='Vite' />
+                <Icon type='Typescript' />
+                <Icon type='React' />
+                <Icon type='Tailwind' />
+                <Icon type='Zustand' />
+                <Icon type='Axios' />
+                <Icon type='Tanstack-query' />
               </ul>
             </div>
             <Button>자세히 보기</Button>
           </Link>
         </li>
         <li className='transfrom hover:shadow-card group relative w-full overflow-hidden rounded-[20px] border border-neutral-300 transition-all duration-500 hover:-translate-x-3 hover:-translate-y-3'>
-          <Link href='#'>
+          <Link href='/projects/micgolf'>
             <div className='relative h-[260px]'>
               <Image
                 src={'/imgs/project_micgolf.jpg'}
@@ -65,12 +66,13 @@ export default function Projects() {
               <p className='my-[6px] leading-[16px]'>파파타랩스 기업협업 자사몰 서비스 유저, 어드민 기획 및 제작</p>
               <p className='my-[6px] text-[14px] leading-[14px]'>2024. 11.07 - 2024. 12. 11</p>
               <ul className='flex gap-2'>
-                <Icon type='vite' />
-                <Icon type='typescript' />
-                <Icon type='react' />
-                <Icon type='tailwind' />
-                <Icon type='zustand' />
-                <Icon type='axios' />
+                <Icon type='Vite' />
+                <Icon type='Typescript' />
+                <Icon type='React' />
+                <Icon type='Tailwind' />
+                <Icon type='Zustand' />
+                <Icon type='Axios' />
+                <Icon type='Tanstack-query' />
               </ul>
             </div>
             <BlackBadge>자세히 보기</BlackBadge>

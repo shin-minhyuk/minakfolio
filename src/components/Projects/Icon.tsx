@@ -1,30 +1,30 @@
 import Image from 'next/image';
 
 type IconType =
-  | 'axios'
-  | 'next'
-  | 'react'
-  | 'supabase'
-  | 'tailwind'
-  | 'tanstackquery'
-  | 'typescript'
-  | 'vite'
-  | 'zustand';
+  | 'Axios'
+  | 'Next'
+  | 'React'
+  | 'Supabase'
+  | 'Tailwind'
+  | 'Tanstack-query'
+  | 'Typescript'
+  | 'Vite'
+  | 'Zustand';
 type Props = {
   type: IconType;
   children?: React.ReactNode;
 };
 
 const ICONS: Record<IconType, string> = {
-  axios: 'axios.svg',
-  next: 'nextjs.svg',
-  react: 'reactjs.svg',
-  supabase: 'supabase.svg',
-  tailwind: 'tailwind.svg',
-  tanstackquery: 'tanstackquery.svg',
-  typescript: 'typescript.svg',
-  vite: 'vitejs.svg',
-  zustand: 'zustand.svg',
+  Axios: 'axios.svg',
+  Next: 'nextjs.svg',
+  React: 'reactjs.svg',
+  Supabase: 'supabase.svg',
+  Tailwind: 'tailwind.svg',
+  'Tanstack-query': 'tanstackquery.svg',
+  Typescript: 'typescript.svg',
+  Vite: 'vitejs.svg',
+  Zustand: 'zustand.svg',
 };
 
 export default function Icon({ type, children }: Props) {

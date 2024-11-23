@@ -1,27 +1,29 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const pathName = usePathname();
-  const showGoBackLink = pathName.startsWith("/projects");
+  const showGoBackLink = pathName.startsWith('/projects');
 
   return (
-    <header className='flex items-center justify-between font-aggro mx-[20px] px-[4px] py-[16px] fixed t-0 left-0 right-0 z-20 text-white'>
+    <header
+      className={`${showGoBackLink && 'border-b border-neutral-400'} t-0 fixed left-0 right-0 z-20 mx-[20px] flex items-center justify-between px-[4px] py-[16px] font-aggro text-white`}
+    >
       {showGoBackLink ? (
-        <Link href='/#projects'>전체 프로젝트 보기</Link>
+        <Link
+          href='/#projects'
+          className='group flex items-center gap-1 rounded-[20px] border border-neutral-300 px-4 pb-1 pt-[6px] font-[100] text-[#373737] transition-colors duration-500 hover:bg-[#373737] hover:text-[#fff9f9]'
+        >
+          <span className='mb-[3px] h-[10px] w-[10px] rotate-[45deg] border-b-[1.8px] border-l-[1.8px] border-[#373737] transition-colors duration-500 group-hover:border-[#fff9f9]' />
+          <span>전체 프로젝트 보기</span>
+        </Link>
       ) : (
-        <Image
-          src={"/img/logo.png"}
-          alt='로고'
-          width='40'
-          height='40'
-          priority
-        />
+        <Image src={'/img/logo.png'} alt='로고' width='40' height='40' />
       )}
-      <h1 className='text-xl font-bold'>MINHYUKFOLIO</h1>
+      <h1 className={`text-xl font-bold ${showGoBackLink && 'text-[#373737]'}`}>MINHYUKFOLIO</h1>
     </header>
   );
 }

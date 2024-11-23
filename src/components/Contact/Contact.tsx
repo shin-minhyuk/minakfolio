@@ -57,12 +57,10 @@ export default function Contact() {
           </label>
           <button
             type='submit'
-            className='group relative col-span-2 mt-2 h-[42px] w-full rounded-full border border-neutral-300 font-aggro font-[100] transition-all duration-500 hover:bg-[#373737] hover:text-white'
+            className='group relative col-span-2 mt-2 h-[42px] w-full rounded-full border border-neutral-300 font-aggro font-[100] transition-all duration-500 hover:bg-[#373737]'
           >
             {/* 텍스트 */}
-            <span className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:hidden'>
-              메일 보내기
-            </span>
+            <span className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>메일 보내기</span>
 
             {/* 메일 아이콘 */}
             <div className='absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 group-hover:block'>
