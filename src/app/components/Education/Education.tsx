@@ -23,9 +23,14 @@ export default function Education() {
           </span>
           <div className='flex flex-1 flex-col gap-1'>
             <p>2018. 01 - 2023. 02</p>
-            <p className='font-semibold'>경일대학교 패션디자인학과</p>
+            <p className='font-semibold'>
+              경일대학교 패션디자인학과 <span className='text-sm'>(3.8 / 4.5)</span>
+            </p>
             <p className='pl-4 indent-[-9px] before:mr-1 before:content-["·"]'>K-뷰티 융합학부 학생회 차장 2년 근속</p>
-            <p className='pl-4 indent-[-9px] before:mr-1 before:content-["·"]'>LINC+ 사업단 창업동아리 팀장</p>
+            <p className='pl-4 indent-[-9px] before:mr-1 before:content-["·"]'>
+              LINC+ 사업단 창업동아리 <span className='font-semibold'>팀장</span>
+            </p>
+
             <p></p>
           </div>
         </li>

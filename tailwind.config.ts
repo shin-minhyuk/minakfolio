@@ -20,12 +20,19 @@ const config: Config = {
           '70%': { transform: 'translateY(4px)', opacity: '1' },
           '100%': { transform: 'translateY(4px)', opacity: '0' },
         },
+        shake: {
+          '0%': { transform: 'rotate(0deg)' },
+          '33%': { transform: 'rotate(20deg)' },
+          '66%': { transform: 'rotate(-20deg)' },
+          '100%': { transform: 'rotate(0deg)' }, // 애니메이션 종료 시 원래 상태로 복귀
+        },
       },
       animation: {
         'scroll-indicator': 'scroll-indicator 1.5s ease-in-out infinite',
+        shake: 'shake 0.5s ease-in-out',
       },
       boxShadow: {
-        card: '10px 10px 0 0 #000',
+        card: '10px 10px 0 0',
       },
     },
   },
