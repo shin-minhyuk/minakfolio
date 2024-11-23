@@ -25,7 +25,7 @@ export default function Header() {
           <span>전체 프로젝트 보기</span>
         </Link>
       ) : (
-        <Image src={'/img/logo.png'} alt='로고' width='40' height='40' />
+        <Image src={'/imgs/logo.png'} alt='로고' width='40' height='40' />
       )}
       <h1 className={`text-xl font-bold ${showGoBackLink && 'text-[#373737]'}`}>MINHYUKFOLIO</h1>
     </header>
