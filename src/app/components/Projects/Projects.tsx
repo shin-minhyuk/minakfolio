@@ -5,8 +5,9 @@ import Section from '../Common/Section';
 import SectionHeadLine from '../Common/SectionHeadLine';
 import TitleBadge from '../Common/TitleBadge';
 import Image from 'next/image';
-import BlackBadge from './BlackBadge';
+import BlackBadge from './Button';
 import Icon from './Icon';
+import Button from './Button';
 
 export default function Projects() {
   return (
@@ -16,12 +17,12 @@ export default function Projects() {
         모든 사용자가 만족할 수 있는 서비스를 꿈꾸며, <br />
         <span className='text-[#ecb921]'>어제보다 더 나은 오늘</span>을 만들어가고 있습니다.
       </SectionHeadLine>
-      <p className='mt-[-3rem]'>
+      <p className='mb-[60px] mt-[-3rem]'>
         짧은 기간동안 다양한 프로젝트를 시도하며 완성도를 높이기 위해 상세하게 살펴보고 <br />
         사용자 경험의 관점에서 개선할 부분은 없을 지 고민하는 습관을 만들고 있습니다.
       </p>
       <ul className='grid grid-cols-2 gap-[60px]'>
-        <li className='relative w-full overflow-hidden rounded-[20px] border border-neutral-300'>
+        <li className='transfrom hover:shadow-card group relative w-full overflow-hidden rounded-[20px] border border-neutral-300 transition-all duration-500 hover:-translate-x-3 hover:-translate-y-3'>
           <Link href='#'>
             <div className='relative h-[260px]'>
               <Image
@@ -45,10 +46,10 @@ export default function Projects() {
                 <Icon type='axios' />
               </ul>
             </div>
-            <BlackBadge>자세히 보기</BlackBadge>
+            <Button>자세히 보기</Button>
           </Link>
         </li>
-        <li className='relative w-full overflow-hidden rounded-[20px] border border-neutral-300'>
+        <li className='transfrom hover:shadow-card group relative w-full overflow-hidden rounded-[20px] border border-neutral-300 transition-all duration-500 hover:-translate-x-3 hover:-translate-y-3'>
           <Link href='#'>
             <div className='relative h-[260px]'>
               <Image

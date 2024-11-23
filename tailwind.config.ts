@@ -24,6 +24,9 @@ const config: Config = {
       animation: {
         'scroll-indicator': 'scroll-indicator 1.5s ease-in-out infinite',
       },
+      boxShadow: {
+        card: '10px 10px 0 0 #000',
+      },
     },
   },
   plugins: [],
