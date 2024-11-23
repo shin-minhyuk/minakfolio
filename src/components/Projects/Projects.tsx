@@ -23,7 +23,7 @@ export default function Projects() {
       </p>
       <ul className='grid grid-cols-2 gap-[60px]'>
         <li className='transfrom hover:shadow-card group relative w-full overflow-hidden rounded-[20px] border border-neutral-300 transition-all duration-500 hover:-translate-x-3 hover:-translate-y-3'>
-          <Link href='#'>
+          <Link href='/'>
             <div className='relative h-[260px]'>
               <Image
                 src={'/imgs/project_vita.jpg'}

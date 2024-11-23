@@ -1,10 +1,8 @@
-'use client';
-
-import Section from '../Common/Section';
 import Image from 'next/image';
+import Section from '../Common/Section';
+import SectionHeadLine from '../Common/SectionHeadLine';
 import TitleBadge from '../Common/TitleBadge';
 import Link from 'next/link';
-import SectionHeadLine from '../Common/SectionHeadLine';
 
 export default function About() {
   return (
