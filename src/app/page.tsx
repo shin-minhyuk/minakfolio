@@ -16,6 +16,7 @@ export default function Home() {
       <Education />
       <Projects />
       <Contact />
+      {/* 20241123 FIXME: 이력서 팝업 -> toast 형식 */}
     </>
   );
 }
