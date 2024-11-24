@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-type ContactFormData = {
+export type ContactFormData = {
   name: string;
   email: string;
   content: string;
@@ -19,7 +19,6 @@ export async function POST(req: Request) {
     const { name, email, content } = body as ContactFormData;
 
     if (!name || !email || !content) {
-      console.error('Missing required fields:', { name, email, content });
       return NextResponse.json({ error: '채워지지 않은 필드가 있는지 확인해주세요.' }, { status: 400 });
     }
 
@@ -38,7 +37,6 @@ export async function POST(req: Request) {
       headers,
       body: JSON.stringify({ name, email, content }),
     });
-    console.log(response);
 
     if (!response.ok) {
       const error = await response.json();

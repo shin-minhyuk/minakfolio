@@ -3,36 +3,41 @@
 import Image from 'next/image';
 import Section from '../Common/Section';
 import SectionHeadLine from '../Common/SectionHeadLine';
+import { useMutation } from '@tanstack/react-query';
+import { ContactFormData } from '@/app/api/contacts/route';
+import { PulseLoader } from 'react-spinners';
 
 export default function Contact() {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    console.log(data);
-
-    try {
+  const mutation = useMutation({
+    mutationFn: async (formData: ContactFormData) => {
       const response = await fetch('/api/contacts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
-        const result = await response.json();
-        // FIXME: toast 형식으로 변경
-        alert(result.message);
-      } else {
+      if (!response.ok) {
         const error = await response.json();
-        // FIXME: toast 형식으로 변경
-        alert(error.message);
+        throw new Error(error.message || '메일 전송에 실패했습니다.');
       }
-    } catch (error) {
-      console.error('Error sending email:', error);
-      // FIXME: toast 형식으로 변경
-      alert('Something went wrong. Please try again later.');
-    }
+      return response.json();
+    },
+    onSuccess: (data) => {
+      console.log('성공: ', data);
+      alert(data.message); // FIXME: toast 형식으로 변경
+    },
+    onError: (error) => {
+      alert(error.message || 'Something went wrong. Please try again later.'); // FIXME: toast 형식으로 변경
+    },
+  });
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries()) as ContactFormData;
+
+    mutation.mutate(data);
   };
 
   return (
@@ -48,7 +53,7 @@ export default function Contact() {
             남겨주신 메일은 빠르게 확인 후, 1-2일 내로 성심껏 답변드리겠습니다.
           </p>
         </div>
-        <form onSubmit={(e) => handleSubmit(e)} className='grid w-full max-w-[676px] grid-cols-2 gap-5'>
+        <form onSubmit={(e) => onSubmit(e)} className='grid w-full max-w-[676px] grid-cols-2 gap-5'>
           <label>
             <span className='ml-1 font-aggro font-[100]'>이름 / 소속</span>
             <input
@@ -79,15 +84,23 @@ export default function Contact() {
           </label>
           <button
             type='submit'
-            className='group relative col-span-2 mt-2 h-[42px] w-full rounded-full border border-neutral-300 font-aggro font-[100] transition-all duration-500 hover:bg-[#373737]'
+            className={`group relative col-span-2 mt-2 h-[42px] w-full rounded-full border border-neutral-300 font-aggro font-[100] transition-all duration-500 hover:bg-[#373737] ${mutation.isPending && 'bg-[#373737]'}`}
+            disabled={mutation.isPending}
           >
             {/* 텍스트 */}
-            <span className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>메일 보내기</span>
-
-            {/* 메일 아이콘 */}
-            <div className='absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 group-hover:block'>
-              <Image src={'/imgs/mail.svg'} width={30} height={30} alt='mail' className='animate-shake' />
-            </div>
+            {mutation.isPending ? (
+              <span className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[40%]'>
+                <PulseLoader color='#fff9f9' />
+              </span>
+            ) : (
+              <>
+                <span className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>메일 보내기</span>
+                {/* 메일 아이콘 */}
+                <div className='absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 group-hover:block'>
+                  <Image src={'/imgs/mail.svg'} width={30} height={30} alt='mail' className='animate-shake' />
+                </div>
+              </>
+            )}
           </button>
         </form>
       </div>

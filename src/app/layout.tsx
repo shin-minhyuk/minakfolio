@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import RQProvider from '@/components/Common/RQProvider';
 
 export const metadata: Metadata = {
   title: 'MINHYUKFOLIO | 신민혁 포트폴리오',
@@ -23,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body>
-        <main>{children}</main>
+        <RQProvider>
+          <main>{children}</main>
+        </RQProvider>
       </body>
     </html>
   );
