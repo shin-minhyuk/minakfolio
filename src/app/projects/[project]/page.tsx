@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-type ProjectKeys = 'vita' | 'micgolf';
+type ProjectKeys = 'vita' | 'micgolf' | 'minflix';
 type Feature = {
   title: string;
   description: string[];
@@ -88,6 +88,51 @@ const projectDatas: Projects = {
     title: 'MIC GOLF',
     description: '파파타랩스 기업협업 자사몰 서비스 유저, 어드민 기획 및 제작',
     duration: '2024. 11.07 - 2024. 12. 11',
+    techStack: ['Vite', 'Typescript', 'React', 'Tailwind', 'Zustand', 'Axios', 'Tanstack-query'],
+    image: '/imgs/project_micgolf.jpg',
+    github: 'https://github.com/MICGolf/frontend',
+    link: 'https://micgolf.kro.kr/',
+    teamSize: '팀 프로젝트',
+    role: '개발 팀장, 프론트엔드 팀장',
+    features: [
+      {
+        title: '프로젝트 초기 설정 및 구조 설계',
+        description: [
+          '코드 품질 유지를 위해 eslint와 prettier를 도입 및 적용',
+          '협업 효율성을 높이기 위해 Github Pull Request Role 설정 및 Detecting Main Branch 전략을 사용 및 체계적인 일정 관리와 코드 리뷰 진행',
+        ],
+      },
+      {
+        title: '메인 페이지 애니메이션 및 인터렉션 강화',
+        description: [
+          'Framer-motion을 이용한 랜딩 인트로 추가',
+          '메인 페이지에서 인기 상품과 이벤트를 보여주는 반응형 캐러셀 구현',
+          '자동 슬라이드 기능과 드래그/스와이프 기능을 추가하여 사용자 경험 향상',
+          '메인 페이지 우축 하단 FAB 버튼을 제작하여 사용자가 이전 구경했던 상품 리스트 출력 및 바로가기 기능 구현',
+          '첫 페이지 로드 시 이벤트 알림을 위한 팝업 배너 구현, 쿠키를 사용하여 오늘하루 보지않기 기능 구현',
+        ],
+      },
+      {
+        title: '장바구니 주요 기능',
+        description: [
+          '장바구니 기능 구현, Tanstack-Query를 사용해 상품 데이터를 효율적으로 가져오며 비회원에서 로그인 했을 경우 장바구니의 싱크를 맞추는 기능 구현',
+          '사용자가 선택한 상품을 로컬스토리지에 저장해 새로고침 후에도 데이텅 유지, 상품의 수량 변경 및 삭제 기능 구현',
+        ],
+      },
+      {
+        title: '결제 및 주문 관리',
+        description: ['결제 프로세스 구현중 ...'],
+      },
+      {
+        title: '관리자(Admin) 페이지',
+        description: ['상품 등록, 수정, 삭제 기능 구현', 'React-Hook-Form을 사용하여 입력 값 검증 및 에러 메시지 출력'],
+      },
+    ],
+  },
+  minflix: {
+    title: 'MIN FLIX',
+    description: '실시간 영화 추천, 검색 및 개인화된 즐겨찾기 관리가 가능한 영화 플랫폼',
+    duration: '2024. 08.20 - 2024. 08. 27',
     techStack: ['Vite', 'Typescript', 'React', 'Tailwind', 'Zustand', 'Axios', 'Tanstack-query'],
     image: '/imgs/project_micgolf.jpg',
     github: 'https://github.com/MICGolf/frontend',
