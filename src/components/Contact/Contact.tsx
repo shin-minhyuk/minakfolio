@@ -5,12 +5,34 @@ import Section from '../Common/Section';
 import SectionHeadLine from '../Common/SectionHeadLine';
 
 export default function Contact() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
     console.log(data);
+
+    try {
+      const response = await fetch('/api/contacts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        // FIXME: toast 형식으로 변경
+        alert(result.message);
+      } else {
+        const error = await response.json();
+        // FIXME: toast 형식으로 변경
+        alert(error.message);
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      // FIXME: toast 형식으로 변경
+      alert('Something went wrong. Please try again later.');
+    }
   };
 
   return (
@@ -50,7 +72,7 @@ export default function Contact() {
           <label className='col-span-2'>
             <span className='ml-1 font-aggro font-[100]'>내용</span>
             <textarea
-              name='textarea'
+              name='content'
               className='mt-2 h-[120px] w-full resize-none rounded-2xl border border-neutral-300 px-4 py-3 leading-[1rem] transition-all duration-500 hover:border-[#373737] focus:border-[#373737] focus:outline-none focus:ring-1 focus:ring-[#373737]'
               placeholder='궁금한 내용이 있다면 편하게 작성해 주세요 :)'
             />
