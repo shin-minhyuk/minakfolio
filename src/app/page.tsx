@@ -5,6 +5,7 @@ import Header from '@/components/Common/Header';
 import Intro from '@/components/Intro/Intro';
 import IntroAnimation from '@/components/Intro/IntroAnimation';
 import Projects from '@/components/Projects/Projects';
+import AnimatedSection from '@/components/Common/AnimationSection';
 
 export default function Home() {
   return (
@@ -12,11 +13,18 @@ export default function Home() {
       <IntroAnimation />
       <Header />
       <Intro />
-      <About />
-      <Education />
-      <Projects />
-      <Contact />
-      {/* 20241123 FIXME: 이력서 팝업 -> toast 형식 */}
+      <AnimatedSection>
+        <About />
+      </AnimatedSection>
+      <AnimatedSection>
+        <Education />
+      </AnimatedSection>
+      <AnimatedSection>
+        <Projects />
+      </AnimatedSection>
+      <AnimatedSection>
+        <Contact />
+      </AnimatedSection>
     </>
   );
 }
