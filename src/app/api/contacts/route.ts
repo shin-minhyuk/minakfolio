@@ -27,8 +27,8 @@ export async function POST(req: Request) {
       port: 465,
       secure: true,
       auth: {
-        user: process.env.NEXT_PUBLIC_EMAIL_USER,
-        pass: process.env.NEXT_PUBLIC_EMAIL_PASSWORD,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
       },
     });
 
@@ -50,7 +50,7 @@ export async function POST(req: Request) {
       subject: `MINHYUKFOLIO || ${name}님의 메시지`,
       text: `이름: ${name}\n이메일: ${email}\n내용: ${content}`,
     });
-    console.log('이메일 전송완료:', emailResult);
+    console.log('이메일: ', emailResult);
 
     return NextResponse.json(
       { message: '이메일이 정상적으로 전송되었습니다.\n1-2일 내로 확인 후 연락드리겠습니다!' },

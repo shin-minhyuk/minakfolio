@@ -136,7 +136,9 @@ export default function Contact() {
                   </span>
                 ) : (
                   <>
-                    <span className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>메일 보내기</span>
+                    <span className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:hidden'>
+                      메일 보내기
+                    </span>
                     {/* 메일 아이콘 */}
                     <div className='absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 group-hover:block'>
                       <Image src={'/imgs/mail.svg'} width={30} height={30} alt='mail' className='animate-shake' />

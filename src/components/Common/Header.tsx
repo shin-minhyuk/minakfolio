@@ -34,7 +34,7 @@ export default function Header() {
         {/* 트리거 */}
       </div>
       <div
-        className='absolute z-50 h-10 w-full bg-transparent'
+        className='pointer-events-none absolute z-50 h-10 w-full bg-transparent'
         style={{
           height: 'calc(100dvh + 120px)',
         }}
