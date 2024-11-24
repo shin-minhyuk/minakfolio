@@ -9,7 +9,10 @@ export type IconType =
   | 'Tanstack-query'
   | 'Typescript'
   | 'Vite'
-  | 'Zustand';
+  | 'Zustand'
+  | 'Javascript'
+  | 'Sass'
+  | 'Redux';
 
 type Props = {
   type: IconType;
@@ -26,6 +29,9 @@ const ICONS: Record<IconType, string> = {
   Typescript: 'typescript.svg',
   Vite: 'vitejs.svg',
   Zustand: 'zustand.svg',
+  Javascript: 'javascript.svg',
+  Sass: 'sass.svg',
+  Redux: 'redux.svg',
 };
 
 export default function Icon({ type }: Props) {
