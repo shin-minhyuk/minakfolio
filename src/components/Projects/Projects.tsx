@@ -23,45 +23,39 @@ export default function Projects() {
       </p>
       <ul className='grid grid-cols-2 gap-[60px]'>
         <li className='transfrom group relative w-full overflow-hidden rounded-[20px] border border-neutral-300 transition-all duration-500 hover:-translate-x-3 hover:-translate-y-3 hover:shadow-card'>
-          <Link href='/projects/vita'>
+          <Link href='/projects/minhyukfolio'>
             <div className='relative h-[260px]'>
               <Image
-                src={'/imgs/project_vita.jpg'}
+                src={'/imgs/thumbnail.jpg'}
                 sizes='500px'
                 fill
-                alt='VITA 프로젝트 이미지'
+                alt='MINHYUKFOLIO 프로젝트 이미지'
                 className='object-cover'
               />
             </div>
             <div className='m-5'>
-              <h4 className='font-aggro text-2xl font-semibold'>VITA</h4>
-              <p className='my-[6px]'>실시간 소통이 가능한 게임메이트 매칭 서비스</p>
-              <p className='my-[6px] text-[14px] leading-[14px]'>2024. 10.10 - 2024. 11. 06</p>
+              <h4 className='font-aggro text-2xl font-semibold'>MINHYUKFOLIO</h4>
+              <p className='my-[6px]'>프론트엔드 개발자 포트폴리오 사이트</p>
+              <p className='my-[6px] text-[14px] leading-[14px]'>2024. 11. 22 - ing</p>
               <ul className='flex gap-2'>
                 <li className='rounded-[4px]'>
-                  <Icon type='Vite' />
+                  <Icon type='Next' />
                 </li>
                 <li className='rounded-[4px]'>
                   <Icon type='Typescript' />
                 </li>
                 <li className='rounded-[4px]'>
-                  <Icon type='React' />
-                </li>
-                <li className='rounded-[4px]'>
                   <Icon type='Tailwind' />
-                </li>
-                <li className='rounded-[4px]'>
-                  <Icon type='Zustand' />
-                </li>
-                <li className='rounded-[4px]'>
-                  <Icon type='Axios' />
                 </li>
                 <li className='rounded-[4px]'>
                   <Icon type='Tanstack-query' />
                 </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Supabase' />
+                </li>
               </ul>
             </div>
-            <Button>자세히 보기</Button>
+            <BlackBadge>자세히 보기</BlackBadge>
           </Link>
         </li>
         <li className='transfrom group relative w-full overflow-hidden rounded-[20px] border border-neutral-300 transition-all duration-500 hover:-translate-x-3 hover:-translate-y-3 hover:shadow-card'>
@@ -104,6 +98,48 @@ export default function Projects() {
               </ul>
             </div>
             <BlackBadge>자세히 보기</BlackBadge>
+          </Link>
+        </li>
+        <li className='transfrom group relative w-full overflow-hidden rounded-[20px] border border-neutral-300 transition-all duration-500 hover:-translate-x-3 hover:-translate-y-3 hover:shadow-card'>
+          <Link href='/projects/vita'>
+            <div className='relative h-[260px]'>
+              <Image
+                src={'/imgs/project_vita.jpg'}
+                sizes='500px'
+                fill
+                alt='VITA 프로젝트 이미지'
+                className='object-cover'
+              />
+            </div>
+            <div className='m-5'>
+              <h4 className='font-aggro text-2xl font-semibold'>VITA</h4>
+              <p className='my-[6px]'>실시간 소통이 가능한 게임메이트 매칭 서비스</p>
+              <p className='my-[6px] text-[14px] leading-[14px]'>2024. 10.10 - 2024. 11. 06</p>
+              <ul className='flex gap-2'>
+                <li className='rounded-[4px]'>
+                  <Icon type='Vite' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Typescript' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='React' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Tailwind' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Zustand' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Axios' />
+                </li>
+                <li className='rounded-[4px]'>
+                  <Icon type='Tanstack-query' />
+                </li>
+              </ul>
+            </div>
+            <Button>자세히 보기</Button>
           </Link>
         </li>
         <li className='transfrom group relative w-full overflow-hidden rounded-[20px] border border-neutral-300 transition-all duration-500 hover:-translate-x-3 hover:-translate-y-3 hover:shadow-card'>

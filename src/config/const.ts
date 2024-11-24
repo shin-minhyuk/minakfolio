@@ -1,6 +1,6 @@
 import { IconType } from '@/components/Projects/Icon';
 
-export type ProjectKeys = 'vita' | 'micgolf' | 'minflix';
+export type ProjectKeys = 'vita' | 'micgolf' | 'minflix' | 'minhyukfolio';
 export type Feature = {
   title: string;
   description: string[];
@@ -229,6 +229,62 @@ export const projectDatas: Projects = {
       '/imgs/project_minflix.jpg',
       '/imgs/project_minflix.jpg',
       '/imgs/project_minflix.jpg',
+    ],
+  },
+  minhyukfolio: {
+    title: 'MINHYUKFOLIO',
+    description: '프론트엔드 개발자 포트폴리오 사이트',
+    duration: '2024. 11. 22 - ing',
+    techStack: ['Next', 'Typescript', 'Tailwind', 'Tanstack-query', 'Supabase'],
+    image: '/imgs/thumbnail.jpg',
+    github: 'https://github.com/shin-minhyuk/minakfolio',
+    link: 'https://minakfolio.vercel.app/',
+    teamSize: '개인 프로젝트',
+    role: '전체 개발 및 설계',
+    features: [
+      {
+        title: 'Framer Motion을 활용한 랜딩, 인트로 애니메이션',
+        description: [
+          '페이지 진입 시, 자연스럽게 나타나는 텍스트 페이드 인과 슬라이드 애니메이션을 통해 첫인상에서 사용자의 몰입감을 높였습니다',
+          '인트로가 끝난 후 메인 페이지에서 추가적으로 애니메이션이 적용, 세션 기반으로 새로고침 시 반복되지 않도록 구현',
+        ],
+      },
+      {
+        title: '스크롤 기반 애니메이션',
+        description: [
+          '특정 섹션에 접근할 때 시차 효과를 적용하여 동적인 화면 구성을 강화',
+          '깔끔하면서도 동적인 인터랙션을 통해 UI의 사용성을 강화',
+        ],
+      },
+      {
+        title: '버튼 및 링크 애니메이션',
+        description: [
+          '마우스 오버 시 버튼이 스케일 업되거나 색상이 변하며 직관적인 피드백 제공',
+          '사용자가 선택한 상품을 로컬스토리지에 저장해 새로고침 후에도 데이텅 유지, 상품의 수량 변경 및 삭제 기능 구현',
+        ],
+      },
+      {
+        title: 'SEO 최적화',
+        description: [
+          'Next.js의 내장 기능을 활용하여 SEO를 고려한 메타 태그와 페이지 구조를 설계',
+          '각 페이지에 적절한 메타데이터를 추가하여 검색 엔진에서의 가시성을 강화',
+        ],
+      },
+      {
+        title: '사용자와의 소통을 위한 이메일 전송 기능 구현 및 실시간 피드백 제공',
+        description: [
+          'MINHYUKFOLIO 프로젝트에서는 사용자 문의 폼 데이터를 이메일로 전송하는 기능을 구현하여, 방문자가 쉽게 문의 사항을 남기고 소통할 수 있도록 했습니다. 이를 위해 Next.js API Routes를 활용해 백엔드 로직을 작성하고, nodemailer를 사용해 SMTP 서버를 통한 안전한 이메일 전송 프로세스를 구현하였습니다. 또한, 폼 제출 후 성공 및 실패 여부를 사용자에게 즉각적으로 전달하기 위해 Toast UI를 활용한 실시간 피드백 시스템을 추가하였습니다. 전송 중에는 로딩 상태를 Spinner를 통해 시각적으로 제공하여 사용자 경험(UX)을 강화하였고, 전송 성공 시 축하 메시지를, 실패 시 명확한 에러 메시지를 표시하도록 설계하였습니다',
+        ],
+      },
+    ],
+    expreience: [],
+    keyPoint: [],
+    backgroundImages: [
+      '/imgs/thumbnail.jpg',
+      '/imgs/thumbnail.jpg',
+      '/imgs/thumbnail.jpg',
+      '/imgs/thumbnail.jpg',
+      '/imgs/thumbnail.jpg',
     ],
   },
 };
