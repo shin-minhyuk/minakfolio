@@ -105,16 +105,16 @@ export default function Intro() {
 
         {showCustomBar && (
           <div className='relative h-16 w-full'>
-            <div className='animate-stretchFromCenter absolute left-1/2 top-1/2 h-2 w-0 -translate-x-1/2 -translate-y-1/2 transform bg-white'>
+            <div className='absolute left-1/2 top-1/2 h-2 w-0 -translate-x-1/2 -translate-y-1/2 transform animate-stretchFromCenter bg-white'>
               <div
-                className='animate-fadeIn absolute bottom-2 left-0 h-[64px] w-[70px] bg-contain bg-bottom bg-no-repeat opacity-0'
+                className='absolute bottom-2 left-0 h-[64px] w-[70px] animate-fadeIn bg-contain bg-bottom bg-no-repeat opacity-0'
                 style={{
                   backgroundImage: `url('/imgs/tree_left.svg')`,
                 }}
               ></div>
 
               <div
-                className='animate-fadeIn absolute bottom-2 right-0 h-[64px] w-[70px] bg-contain bg-bottom bg-no-repeat opacity-0'
+                className='absolute bottom-2 right-0 h-[64px] w-[70px] animate-fadeIn bg-contain bg-bottom bg-no-repeat opacity-0'
                 style={{
                   backgroundImage: `url('/imgs/tree_right.svg')`,
                 }}
@@ -128,7 +128,7 @@ export default function Intro() {
             showMouseComponent ? 'opacity-100' : 'opacity-0'
           }`}
         />
-        <div className='absolute bottom-0 h-[100px] w-full bg-gradient-to-t from-[#000000B3] to-transparent'></div>
+        <div className='absolute bottom-0 h-[200px] w-full bg-gradient-to-t from-[#000000] to-transparent'></div>
       </div>
       {/* slide */}
       <div className='relative h-[173px] w-full overflow-x-hidden'>

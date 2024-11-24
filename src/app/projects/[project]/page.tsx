@@ -1,6 +1,5 @@
 'ues client';
 
-import Header from '@/components/Common/Header';
 import Icon, { IconType } from '@/components/Projects/Icon';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -142,7 +141,6 @@ export default function ProjectsIdPage({ params }: { params: { project: string }
 
   return (
     <>
-      <Header />
       <section className='mx-auto mt-[72px] max-w-[1120px] px-[40px] py-[72px]' style={{ width: 'calc(100% - 80px)' }}>
         <h2 className='font-aggro text-[72px] font-bold leading-[72px]'>{projectData.title}</h2>
         <p className='font-aggro text-[20px] font-[100] text-[#666666]'>{projectData.description}</p>

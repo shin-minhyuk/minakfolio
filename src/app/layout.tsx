@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import RQProvider from '@/components/Common/RQProvider';
+import Header from '@/components/Common/Header';
+import Footer from '@/components/Common/Footer';
 
 export const metadata: Metadata = {
   title: 'MINHYUKFOLIO | 신민혁 포트폴리오',
@@ -25,7 +27,9 @@ export default function RootLayout({
     <html lang='ko'>
       <body>
         <RQProvider>
+          <Header />
           <main>{children}</main>
+          <Footer />
         </RQProvider>
       </body>
     </html>
