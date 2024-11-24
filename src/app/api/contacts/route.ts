@@ -8,8 +8,7 @@ export type ContactFormData = {
 };
 
 const headers = new Headers();
-headers.append('apikey', process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '');
-headers.append('Authorization', `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''}`);
+headers.append('Authorization', `Bearer ${process.env.SUPABASE_ANON_KEY || ''}`);
 headers.append('Content-Type', 'application/json');
 
 export async function POST(req: Request) {
@@ -32,7 +31,7 @@ export async function POST(req: Request) {
       },
     });
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/contacts`, {
+    const response = await fetch(`${process.env.SUPABASE_URL}/rest/v1/contacts`, {
       method: 'POST',
       headers,
       body: JSON.stringify({ name, email, content }),
@@ -44,18 +43,22 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: 'DB 저장에 실패했습니다.' }, { status: 500 });
     }
 
-    const emailResult = await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.NEXT_PUBLIC_EMAIL_USER}>`,
-      to: process.env.NEXT_PUBLIC_EMAIL_USER,
-      subject: `MINHYUKFOLIO || ${name}님의 메시지`,
-      text: `이름: ${name}\n이메일: ${email}\n내용: ${content}`,
-    });
-    console.log('이메일: ', emailResult);
-
-    return NextResponse.json(
-      { message: '이메일이 정상적으로 전송되었습니다.\n1-2일 내로 확인 후 연락드리겠습니다!' },
-      { status: 200 }
-    );
+    try {
+      const emailResult = await transporter.sendMail({
+        from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+        to: process.env.EMAIL_USER,
+        subject: `MINHYUKFOLIO || ${name}님의 메시지`,
+        text: `이름: ${name}\n이메일: ${email}\n내용: ${content}`,
+      });
+      console.log('이메일 전송 결과:', emailResult);
+      return NextResponse.json(
+        { message: '이메일이 정상적으로 전송되었습니다.\n1-2일 내로 확인 후 연락드리겠습니다!' },
+        { status: 200 }
+      );
+    } catch (emailError) {
+      console.error('이메일 전송 실패:', emailError);
+      return NextResponse.json({ message: '이메일 전송에 실패했습니다.' }, { status: 500 });
+    }
   } catch (error) {
     console.error('Internal Server Error:', error);
     return NextResponse.json({ message: '서버에 잠시 문제가 생겼어요.\n잠시 후 다시 시도해주세요!' }, { status: 500 });
