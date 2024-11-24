@@ -102,7 +102,7 @@ export default function Contact() {
                   type='text'
                   autoComplete='name'
                   name='name'
-                  className='mt-2 w-full rounded-full border border-neutral-300 px-4 py-3 leading-[1rem] text-[#373737] transition-all duration-500 hover:border-[#fff9f9] focus:border-[#fff9f9] focus:outline-none focus:ring-1 focus:ring-[#fff9f9]'
+                  className='mt-2 w-full rounded-full border border-neutral-300 px-4 py-3 leading-[1rem] text-[#373737] transition-all duration-500 hover:border-[#151348] focus:border-[#151348] focus:outline-none focus:ring-1 focus:ring-[#151348]'
                   placeholder='I find joy in what I do'
                 />
               </label>
@@ -112,7 +112,7 @@ export default function Contact() {
                   type='email'
                   autoComplete='email'
                   name='email'
-                  className='mt-2 w-full rounded-full border border-neutral-300 px-4 py-3 leading-[1rem] text-[#373737] transition-all duration-500 hover:border-[#fff9f9] focus:border-[#fff9f9] focus:outline-none focus:ring-1 focus:ring-[#fff9f9]'
+                  className='mt-2 w-full rounded-full border border-neutral-300 px-4 py-3 leading-[1rem] text-[#373737] transition-all duration-500 hover:border-[#151348] focus:border-[#151348] focus:outline-none focus:ring-1 focus:ring-[#151348]'
                   placeholder='example@email.com'
                 />
               </label>
@@ -120,13 +120,13 @@ export default function Contact() {
                 <span className='ml-1 font-aggro font-[100]'>내용</span>
                 <textarea
                   name='content'
-                  className='mt-2 h-[120px] w-full resize-none rounded-2xl border border-neutral-300 px-4 py-3 leading-[1rem] text-[#373737] transition-all duration-500 hover:border-[#fff9f9] focus:border-[#fff9f9] focus:outline-none focus:ring-1 focus:ring-[#fff9f9]'
+                  className='mt-2 h-[120px] w-full resize-none rounded-2xl border border-neutral-300 px-4 py-3 leading-[1rem] text-[#373737] transition-all duration-500 hover:border-[#151348] focus:border-[#151348] focus:outline-none focus:ring-1 focus:ring-[#151348]'
                   placeholder='궁금한 내용이 있다면 편하게 작성해 주세요 :)'
                 />
               </label>
               <button
                 type='submit'
-                className={`group relative col-span-2 mt-2 h-[42px] w-full rounded-full border border-neutral-300 font-aggro font-[100] transition-all duration-500 hover:bg-[#fff9f9] ${mutation.isPending && 'bg-[#fff9f9]'}`}
+                className={`group relative col-span-2 mt-2 h-[42px] w-full rounded-full border border-neutral-300 font-aggro font-[100] transition-all duration-500 hover:bg-[#151348] ${mutation.isPending && 'bg-[#151348]'}`}
                 disabled={mutation.isPending}
               >
                 {/* 텍스트 */}

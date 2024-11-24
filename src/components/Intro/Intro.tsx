@@ -76,7 +76,7 @@ export default function Intro() {
     >
       {/* snow */}
       <div
-        className='custom-snow absolute -top-[900px] left-0 right-0 z-20 block w-full'
+        className='custom-snow pointer-events-none absolute -top-[900px] left-0 right-0 z-20 block w-full'
         style={{ height: 'calc((100dvh + 173px)*2)' }}
       />
       {/* title */}
