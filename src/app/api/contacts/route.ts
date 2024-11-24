@@ -12,6 +12,14 @@ headers.append('Authorization', `Bearer ${process.env.SUPABASE_ANON_KEY || ''}`)
 headers.append('Content-Type', 'application/json');
 
 export async function POST(req: Request) {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
+    throw new Error('이메일 환경 변수가 설정되지 않았습니다.');
+  }
+
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    throw new Error('Supabase 환경 변수가 설정되지 않았습니다.');
+  }
+
   try {
     const body = await req.json();
 
