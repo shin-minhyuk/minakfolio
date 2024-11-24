@@ -71,13 +71,19 @@ export default function Contact() {
       <div
         className='relative bg-[#373737] text-[#fff9f9]'
         style={{
-          backgroundImage: 'linear-gradient(#151348, rgba(53, 53, 53, 0.231)), url("/imgs/contact_background.jpg")',
+          backgroundImage: `linear-gradient(
+            to bottom,
+            #151348,            
+            rgba(53, 53, 53, 0.231) 50%, 
+            #151348
+          ), 
+          url("/imgs/contact_background.jpg")`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
         }}
       >
-        <section className='mx-auto h-auto max-w-[1120px] px-[40px] pb-[72px] pt-[200px]'>
+        <section className='mx-auto h-auto max-w-[1120px] px-[40px] py-[200px]'>
           <div className='flex flex-col items-center'>
             <div className='text-center'>
               <SectionHeadLine>
