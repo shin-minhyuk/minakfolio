@@ -34,12 +34,22 @@ const config: Config = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        slideDown: {
+          '0%': { opacity: '0', transform: 'translate(-50%, -20px)' },
+          '100%': { opacity: '1', transform: 'translate(-50%, 0)' },
+        },
+        slideUp: {
+          '0%': { opacity: '1', transform: 'translate(-50%, 0)' },
+          '100%': { opacity: '0', transform: 'translate(-50%, -20px)' },
+        },
       },
       animation: {
         'scroll-indicator': 'scroll-indicator 1.5s ease-in-out infinite',
         shake: 'shake 0.5s ease-in-out',
         stretchFromCenter: 'stretchFromCenter 2s 4s forwards',
         fadeIn: 'fadeIn 1s 5.5s forwards',
+        slideDown: 'slideDown 0.5s ease-out',
+        slideUp: 'slideUp 0.5s ease-in',
       },
       boxShadow: {
         card: '10px 10px 0 0',

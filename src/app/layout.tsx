@@ -3,6 +3,8 @@ import './globals.css';
 import RQProvider from '@/components/Common/RQProvider';
 import Header from '@/components/Common/Header';
 import Footer from '@/components/Common/Footer';
+import { ToastProvider } from '@/components/Toast/ToastContext';
+import { ToastContainer } from '@/components/Toast/ToastContainer';
 
 export const metadata: Metadata = {
   title: 'MINHYUKFOLIO | 신민혁 포트폴리오',
@@ -27,9 +29,12 @@ export default function RootLayout({
     <html lang='ko'>
       <body>
         <RQProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          <ToastProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <ToastContainer />
+          </ToastProvider>
         </RQProvider>
       </body>
     </html>

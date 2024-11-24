@@ -5,8 +5,11 @@ import SectionHeadLine from '../Common/SectionHeadLine';
 import { useMutation } from '@tanstack/react-query';
 import { ContactFormData } from '@/app/api/contacts/route';
 import { PulseLoader } from 'react-spinners';
+import { useToast } from '../Toast/ToastContext';
 
 export default function Contact() {
+  const { addToast } = useToast();
+
   const mutation = useMutation({
     mutationFn: async (formData: ContactFormData) => {
       const response = await fetch('/api/contacts', {
@@ -23,10 +26,11 @@ export default function Contact() {
     },
     onSuccess: (data) => {
       console.log('성공: ', data);
-      alert(data.message); // FIXME: toast 형식으로 변경
+      addToast('메일이 성공적으로 전송되었습니다.', 'success');
     },
     onError: (error) => {
-      alert(error.message || 'Something went wrong. Please try again later.'); // FIXME: toast 형식으로 변경
+      console.error('에러: ', error);
+      addToast(error.message, 'error');
     },
   });
 
