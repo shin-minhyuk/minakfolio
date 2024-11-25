@@ -124,7 +124,7 @@ export default function Intro() {
         )}
 
         <div
-          className={`relative mt-[100px] h-[54px] w-[34px] rounded-[20px] border-2 border-[#fff9f9] opacity-0 transition-opacity duration-1000 ease-in-out before:absolute before:left-[13px] before:top-[10px] before:h-3 before:w-1 before:animate-scroll-indicator before:rounded-full before:bg-[#fff9f9] before:content-[""] ${
+          className={`relative mt-[100px] h-[54px] w-[34px] rounded-[20px] border-2 border-[#fff9f9] opacity-0 transition-opacity duration-1000 ease-in-out before:absolute before:left-[13px] before:top-[10px] before:h-3 before:w-1 before:animate-scrollIndicator before:rounded-full before:bg-[#fff9f9] before:content-[""] ${
             showMouseComponent ? 'opacity-100' : 'opacity-0'
           }`}
         />
