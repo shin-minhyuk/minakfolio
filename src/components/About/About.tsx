@@ -14,7 +14,7 @@ export default function About() {
       <SectionHeadLine>
         눈 내리는 날의 설레임처럼
         <br />
-        자연스러운 경험을 제공하는 서비스를 만들고픈 <br />
+        자연스러운 경험을 제공하는 서비스를 지향하는 <br />
         개발자 <span className='text-[#14a211]'>신민혁</span>입니다. <br />
       </SectionHeadLine>
       <div className='flex justify-center gap-10 font-aggro'>

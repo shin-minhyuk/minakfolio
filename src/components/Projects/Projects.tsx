@@ -26,7 +26,7 @@ export default function Projects() {
           <Link href='/projects/minhyukfolio'>
             <div className='relative h-[260px]'>
               <Image
-                src={'/imgs/thumbnail.jpg'}
+                src={'/imgs/project_minhyukfolio.jpg'}
                 sizes='500px'
                 fill
                 alt='MINHYUKFOLIO 프로젝트 이미지'
