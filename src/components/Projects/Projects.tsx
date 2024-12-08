@@ -36,7 +36,7 @@ export default function Projects() {
             <div className='m-5'>
               <h4 className='font-aggro text-2xl font-semibold'>MINHYUKFOLIO</h4>
               <p className='my-[6px]'>프론트엔드 개발자 포트폴리오 사이트</p>
-              <p className='my-[6px] text-[14px] leading-[14px]'>2024. 11. 22 - ing</p>
+              <p className='my-[6px] text-[14px] leading-[14px]'>2024. 11. 22 - 2024. 11. 25</p>
               <ul className='flex gap-2'>
                 <li className='rounded-[4px]'>
                   <Icon type='Next' />
