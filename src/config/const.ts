@@ -234,7 +234,7 @@ export const projectDatas: Projects = {
   minhyukfolio: {
     title: 'MINHYUKFOLIO',
     description: '프론트엔드 개발자 포트폴리오 사이트',
-    duration: '2024. 11. 22 - ing',
+    duration: '2024. 11. 22 - 2024. 11. 25',
     techStack: ['Next', 'Typescript', 'Tailwind', 'Tanstack-query', 'Supabase'],
     image: '/imgs/thumbnail.jpg',
     github: 'https://github.com/shin-minhyuk/minakfolio',
