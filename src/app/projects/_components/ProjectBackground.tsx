@@ -11,7 +11,6 @@ export default function ProjectBackground({ images }: Props) {
 
   return (
     <div className='fixed left-0 top-1/2 z-[-1] h-[300px] w-full -translate-y-1/2 transform overflow-hidden'>
-      {/* 애니메이션 컨테이너 */}
       <div
         className='animate-scrollBackground flex h-full gap-[40px] opacity-20'
         style={{ width: totalWidth * 2 }} // 두 배로 설정하여 자연스럽게 반복
